@@ -19,7 +19,7 @@
             Please Enter a Valid Email
           </div>
         </div>
-        <div class="col-lg-10 col-md-10 col-sm-10 col-8 d-flex flex-wrap bg-light mt-5 py-3 px-4 rounded-4 z-1">
+        <div class="col-lg-10 col-md-10 col-sm-10 col-8 d-flex flex-wrap bg-light mt-4 py-3 px-4 rounded-4 z-1">
           <div class="col-lg-3 col-md-3 col-sm-3 col-12 d-flex justify-content-between" v-for="(item, index) of cardsData"
             :key="index">
             <card-item :title="item.title" :data="item.data" />

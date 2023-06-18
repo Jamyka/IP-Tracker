@@ -183,36 +183,36 @@ html {
 
 #mapContainer{
   height: -webkit-fill-available;;
-  top: 43%;
+  top: 38%;
   left: 0;
 }
 
-@media (min-width: $breakpoint-largest) {
-  #mapContainer {
-      top: 27%;
-    }
-}
+// @media (min-width: $breakpoint-largest) {
+//   #mapContainer {
+//       top: 43%;
+//     }
+// }
 @media (max-width: $max_width) {
   #mapContainer {
-    top: 49%;
+    top: 44%;
   }
 }
 @media (max-width: $breakpoint-laptop) {
   #mapContainer {
-    top: 44%;
+    top: 40%;
   }
 }
 
 @media (max-width: $breakpoint-tablet) {
   #mapContainer {
-      top: 41%;
+      top: 36%;
     }
 }
 
 
 @media (max-width: $breakpoint-mobile) {
   #mapContainer {
-      top: 52%;
+      top: 45%;
     }
 }
 
