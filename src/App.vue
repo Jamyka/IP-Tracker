@@ -1,26 +1,20 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <transition name="fade">
+    <Loader />
+  </transition>
+  <TrackingPage />
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import '../src/css/styles.scss'
+import TrackingPage from './components/TrackingPage.vue';
+import Loader from './components/loader.vue';
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
-  }
+    TrackingPage,
+    Loader
+  },
 }
 </script>
-
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>

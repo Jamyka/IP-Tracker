@@ -1,4 +1,5 @@
 import { createApp } from 'vue'
 import App from './App.vue'
+import LoaderPlugin from './plugins/loader';
 
-createApp(App).mount('#app')
+createApp(App).use(LoaderPlugin).mount('#app')
