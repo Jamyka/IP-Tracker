@@ -34,20 +34,6 @@
     </form>
 
     <!-- IP Info  -->
-    <div class="d-flex justify-content-center w-100 h-100 info-mt position-relative">
-      <!-- <div class="col-10 d-flex flex-wrap bg-light py-3 px-4 rounded-4 position-absolute" style="z-index: 3;top: -9%">
-        <div class="col-lg-3 col-md-3 col-12 d-flex justify-content-between" v-for="(item, index) of cardsData"
-          :key="index">
-          <card-item :title="item.title" :data="item.data" />
-          <div class="mySeparator mx-2 d-md-block d-none">
-            <div class="mySeparator__elem" v-if="!(index == cardsData.length - 1)"></div>
-          </div>
-        </div>
-      </div> -->
-      <!-- <div id="mapContainer" class="col-12 position-absolute" style="z-index: 1; top: 0;left:0">
-      </div> -->
-    </div>
-
   </div>
 </template>
 <script>

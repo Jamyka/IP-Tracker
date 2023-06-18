@@ -1,10 +1,16 @@
 // Import all of Bootstrap's CSS
 @import "~bootstrap/scss/bootstrap";
 @import "./variables.scss";
+@import "./mixins.scss";
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+html {
+  @include fluid-type($min_width, $max_width, $min_font, $max_font);
 }
 
 #app {
@@ -176,13 +182,40 @@
 }
 
 #mapContainer{
-  height: 73vh;
-  top: 42%;
+  height: -webkit-fill-available;;
+  top: 43%;
   left: 0;
 }
+
+@media (min-width: $breakpoint-largest) {
+  #mapContainer {
+      top: 27%;
+    }
+}
+@media (max-width: $max_width) {
+  #mapContainer {
+    top: 49%;
+  }
+}
+@media (max-width: $breakpoint-laptop) {
+  #mapContainer {
+    top: 44%;
+  }
+}
+
+@media (max-width: $breakpoint-tablet) {
+  #mapContainer {
+      top: 41%;
+    }
+}
+
 
 @media (max-width: $breakpoint-mobile) {
   #mapContainer {
       top: 52%;
     }
+}
+
+.leaflet-marker-icon{
+  width: 30px !important;
 }
