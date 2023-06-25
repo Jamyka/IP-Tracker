@@ -1,39 +1,39 @@
 <template>
   <div class="mainDiv">
-    <h3 class="mainDiv__title">IP Address Tracker</h3>
+    <h2 class="mainDiv__title">IP Address Tracker</h2>
 
-    <!-- Search Input  -->
-    <form @submit.prevent="submitSearchReq">
-      <div class="d-flex row justify-content-center align-items-center">
-        <div class="col-lg-6 col-md-6 col-8">
-          <div class="input-group">
-            <input type="text" class="form-control" placeholder="Search for any IP address or domain"
-              v-maska="bindedObject" @input="validateIP"
-              data-maska="['###.###.###.###', '###.###.#.##','#.#.#.#','###.###.#.#','##.##.###.###','###.##.###.###']" />
-            <!-- data-maska="###.###.###.###" -->
-            <button class="btn mainDiv__submit bg-darkGray" type="submit">
-              <img src="../assets/icon-arrow.svg" />
-            </button>
-          </div>
-          <div class="invalid-feedback d-inline-block h5" v-if="bindedObject.completed && error">
-            Please Enter a Valid Email
-          </div>
-        </div>
-        <div class="col-lg-10 col-md-10 col-sm-10 col-8 d-flex flex-wrap bg-light mt-4 py-3 px-4 rounded-4 z-1">
-          <div class="col-lg-3 col-md-3 col-sm-3 col-12 d-flex justify-content-between" v-for="(item, index) of cardsData"
-            :key="index">
-            <card-item :title="item.title" :data="item.data" />
-            <div class="mySeparator mx-2 d-md-block d-none">
-              <div class="mySeparator__elem" v-if="!(index == cardsData.length - 1)"></div>
+      <!-- Search Input  -->
+      <form @submit.prevent="submitSearchReq">
+        <div class="d-flex row justify-content-center align-items-center">
+          <div class="col-lg-6 col-md-6 col-8">
+            <div class="input-group">
+              <input type="text" class="form-control" placeholder="Search for any IP address or domain"
+                v-maska="bindedObject" @input="validateIP"
+                data-maska="['###.###.###.###', '###.###.#.##','#.#.#.#','###.###.#.#','##.##.###.###','###.##.###.###']" />
+              <!-- data-maska="###.###.###.###" -->
+              <button class="btn mainDiv__submit bg-darkGray" type="submit">
+                <img src="../assets/icon-arrow.svg" />
+              </button>
+            </div>
+            <div class="invalid-feedback d-inline-block h5" v-if="bindedObject.completed && error">
+              Please Enter a Valid Email
             </div>
           </div>
+          <div class="col-lg-10 col-md-10 col-sm-10 col-8 d-flex flex-wrap bg-white mt-4 py-3 px-4 rounded-4 z-1">
+            <div class="col-lg-3 col-md-3 col-sm-3 col-12 d-flex justify-content-between"
+              v-for="(item, index) of cardsData" :key="index">
+              <card-item :title="item.title" :data="item.data" />
+              <div class="mySeparator mx-2 d-md-block d-none">
+                <div class="mySeparator__elem" v-if="!(index == cardsData.length - 1)"></div>
+              </div>
+            </div>
+          </div>
+          <div id="mapContainer" class="col-12 position-absolute z-0">
+          </div>
         </div>
-        <div id="mapContainer" class="col-12 position-absolute z-0">
-        </div>
-      </div>
-    </form>
+      </form>
 
-    <!-- IP Info  -->
+      <!-- IP Info  -->
   </div>
 </template>
 <script>
@@ -90,7 +90,7 @@ export default {
             this.center[0] = data.location.lat;
             this.center[1] = data.location.lng;
             this.cardsData[0].data = data.ip;
-            this.cardsData[1].data = `${data.location.region}, ${data.location.country} <br /> ${data.location.postalCode}`;
+            this.cardsData[1].data = `${data.location.region}, ${data.location.country} <br class="d-none d-md-block"/> ${data.location.postalCode}`;
             this.cardsData[2].data = `UTC ${data.location.timezone}`;
             this.cardsData[3].data = data.isp;
             this.updateMap();

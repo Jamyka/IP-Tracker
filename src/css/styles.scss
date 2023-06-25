@@ -150,9 +150,10 @@ html {
 
   &__title {
     color: $dark-gray;
-    font-weight: 500;
-    // font-size: 10px;
+    font-weight: 700;
+    font-size: 12px;
     text-transform: uppercase;
+    letter-spacing: 2px;
   }
 
   &__body {
@@ -181,7 +182,7 @@ html {
 
 #mapContainer {
   height: -webkit-fill-available;
-  top: 31%;
+  top: 26%;
   left: 0;
 }
 
@@ -192,18 +193,18 @@ html {
 // }
 @media (max-width: $max_width) {
   #mapContainer {
-    top: 33%;
+    top: 29%;
   }
 }
 @media (max-width: $breakpoint-laptop) {
   #mapContainer {
-    top: 31%;
+    top: 26%;
   }
 }
 
 @media (max-width: $breakpoint-tablet) {
   #mapContainer {
-    top: 28%;
+    top: 24%;
   }
 }
 
@@ -215,4 +216,8 @@ html {
 
 .leaflet-marker-icon {
   width: 30px !important;
+}
+
+.bg-white {
+  background-color: #fff;
 }
