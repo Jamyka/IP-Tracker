@@ -182,7 +182,7 @@ html {
 
 #mapContainer {
   height: -webkit-fill-available;
-  top: 26%;
+  top: 25%;
   left: 0;
 }
 
@@ -193,7 +193,7 @@ html {
 // }
 @media (max-width: $max_width) {
   #mapContainer {
-    top: 29%;
+    top: 26%;
   }
 }
 @media (max-width: $breakpoint-laptop) {
@@ -204,7 +204,7 @@ html {
 
 @media (max-width: $breakpoint-tablet) {
   #mapContainer {
-    top: 24%;
+    top: 26%;
   }
 }
 
